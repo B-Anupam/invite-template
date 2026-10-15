@@ -59,8 +59,7 @@
     .award-top { margin: 24px 0 12px; color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
     .name { margin: 0 0 18px; font-family: Georgia, "Times New Roman", serif; font-size: 29px; font-weight: 500; }
     .rule { width: 54px; height: 1px; margin: 0 auto 20px; background: var(--gold); }
-    .award-title { margin: 0 0 16px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(29px, 8vw, 39px); font-weight: 700; letter-spacing: -.035em; line-height: 1.08; overflow-wrap: anywhere; }
-    .roast { margin: 0 auto 14px; color: #4e4b43; font-size: 15px; line-height: 1.65; }
+    .award-title { margin: 0 0 18px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(29px, 8vw, 39px); font-weight: 700; letter-spacing: -.035em; line-height: 1.08; overflow-wrap: anywhere; }
     .appreciation { margin: 0 auto; color: var(--muted); font-size: 13px; line-height: 1.65; }
     .footer { margin-top: 26px; color: var(--muted); text-align: center; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
     .reset { margin-top: 24px; background: transparent; color: var(--ink); border: 1px solid var(--line); }
@@ -97,7 +96,6 @@
         <p id="guestName" class="name"></p>
         <div class="rule"></div>
         <h2 id="awardTitle" class="award-title"></h2>
-        <p id="roast" class="roast"></p>
         <p id="appreciation" class="appreciation"></p>
         <div class="footer">Awarded with questionable authority · 2026</div>
         <button id="resetButton" class="reset" type="button">Back to code entry</button>
@@ -111,28 +109,80 @@
       - code: unique invitation code sent to that guest
       - name: their display name
       - title: their personalized award title
-      - roast: funny line (optional)
       - appreciation: heartfelt line (optional)
 
       Example codes are placeholders. Replace them before publishing.
     */
-    const guests = [
-      {
-        code: "VIP07",
-        name: "Guest Name",
-        title: "The Certified Menace",
-        roast: "A questionable influence. An irreplaceable presence.",
-        appreciation: "Life's more fun with you in it."
-      },
-      {
-        code: "VIP08",
-        name: "Another Guest",
-        title: "The Professional Latecomer",
-        roast: "Always worth the wait. Usually because we have to wait.",
-        appreciation: "Wouldn't be the same without you."
-      }
-      // Add more guest objects here, separated by commas.
-    ];
+    
+const guests = [
+  {
+    code: "UDE16I",
+    name: "Ishika",
+    title: "The Vibe Therapist",
+    appreciation: "You listen without judging, laugh without holding back, and somehow make every conversation feel better. You have a way of making people feel heard, welcome, and happy."
+  },
+  {
+    code: "UDE16D",
+    name: "Dixita",
+    title: "The CEO of Last-Minute Plans",
+    appreciation: "Free advice, premium listening skills, and occasional unsolicited lectures. Ask anything about anyone and this human search engine might have an answer. Seriously though, we can count on you."
+  },
+  {
+    code: "UDE16K",
+    name: "Kanhav",
+    title: "The Low-Key Legend",
+    appreciation: "Never needs the spotlight, but somehow leaves a mark. One of those rare people who make connection feel easy."
+  },
+  {
+    code: "UDE16B",
+    name: "Bhupendra",
+    title: "The Natural Influencer",
+    appreciation: "Occasionally dramatic, naturally iconic, and impossible to ignore. Keep being unapologetically yourself. You have a way of inspiring people without even trying.."
+  },
+  {
+    code: "UDE16BH",
+    name: "Bhavika",
+    title: "The Go-To Human",
+    appreciation: "Some people just attend a gathering. You make it worth remembering. Always helpful, and just a genuinely good person to have around."
+  },
+  {
+    code: "UDE16BHV",
+    name: "Bhavesh",
+    title: "The Genuine One",
+    appreciation: "You don't need the spotlight to stand out. Your quiet presence makes more of a difference than you probably realise."
+  },
+  {
+    code: "UDE16x",
+    name: "Sanyam",
+    title: "The Niceness Overachiever",
+    appreciation: "Being a decent human wasn't enough, apparently. Always thoughtful and reliable, Your standards for being a good person are frankly unreasonable."
+  },
+  {
+    code: "UDE16HI",
+    name: "Himanshu",
+    title: "The Rare Collectible",
+    appreciation: "A limited-edition personality with absolutely no replacement available."
+  },
+  {
+    code: "UDE16DH",
+    name: "Dharmistha",
+    title: "The Main Character Energy",
+    appreciation: "It's honestly irritating how decent you are. Always helpful, easy to get along with, genuinely good person despite all our efforts to find your flaws."
+  },
+  {
+    code: "UDE16SH",
+    name: "Sohan",
+    title: "The Podcaster",
+    appreciation: "You could turn a simple yes-or-no question into a full documentary. But that thoughtful mind of yours is something special."
+  },
+  {
+    code: "UDE16KSH",
+    name: "Kashika",
+    title: "The Good-Natured Genius",
+    appreciation: "Good vibes, always ready to help, and easy to get along with. You make being a genuinely good person look effortless."
+  }
+];
+
 
     const form = document.getElementById("codeForm");
     const input = document.getElementById("guestCode");
@@ -153,9 +203,7 @@
       error.textContent = "";
       document.getElementById("guestName").textContent = guest.name;
       document.getElementById("awardTitle").textContent = guest.title;
-      document.getElementById("roast").textContent = guest.roast || "";
       document.getElementById("appreciation").textContent = guest.appreciation || "";
-      document.getElementById("roast").classList.toggle("hidden", !guest.roast);
       document.getElementById("appreciation").classList.toggle("hidden", !guest.appreciation);
       entry.classList.add("hidden");
       result.classList.add("visible");
